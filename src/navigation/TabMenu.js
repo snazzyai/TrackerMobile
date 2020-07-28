@@ -4,11 +4,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import HomeScreen from '../screens/HomeScreen';
 import ConnectScreen from '../screens/ConnectScreen';
 
-const Tab = createBottomTabNavigator();
 const TabMenu = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Connect"
+      initialRouteName="Home"
       activeColor="#e91e63"
       style={{ backgroundColor: 'tomato' }}
     >

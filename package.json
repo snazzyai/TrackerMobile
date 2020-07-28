@@ -7,21 +7,30 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "buildDebug": "(cd android && ./gradlew clean && ./gradlew assembleDebug)",
+    "buildRelease": "(cd android && ./gradlew clean && ./gradlew assembleRelease)",
+    "sign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore tracker.keystore android/app/build/outputs/apk/app-release-unsigned.apk -alias tracker",
+    "zip": "~/AppData/Local/Android/Sdk/build-tools/23.0.1/zipalign -v 4 android/app/build/outputs/apk/app-release-unsigned.apk android/app/build/outputs/apk/app-release.apk"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.7.2",
     "@react-navigation/native": "^5.7.1",
     "@react-navigation/stack": "^5.7.1",
+    "base-64": "^0.1.0",
+    "convert-string": "^0.1.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-ble-manager": "^7.3.1",
     "react-native-bluetooth-serial-next": "^1.2.3",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-reanimated": "^1.10.1",
     "react-native-safe-area-context": "^3.1.1",
     "react-native-screens": "^2.9.0",
-    "react-native-vector-icons": "^7.0.0"
+    "react-native-vector-icons": "^7.0.0",
+    "rn-nodeify": "^10.2.0",
+    "text-encoding": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
